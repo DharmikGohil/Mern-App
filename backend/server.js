@@ -10,9 +10,8 @@ import messageRoutes from "./Routes/message.route.js";
 
 const app = express();
 dotenv.config();
-
 const PORT = process.env.PORT || 5000;
-
+//console.log(userName)
 // app.get("/", (req, res) => {
 //     // root route https://localhost:5000
 //     res.send("hello world!");
@@ -52,5 +51,3 @@ app.listen(PORT,() =>{
     console.log("connected to DB")
     console.log('listening on port ' + PORT);
 });
-
-

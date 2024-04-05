@@ -71,7 +71,7 @@ export const login = async(req,res)=>{
         const {userName,password}= req.body;
         const user= await User.findOne({userName});
         const isPasswordCorrect = await bcrypt.compare(password,user?.password||""); //user.password from database is same or not, compare with null password is user not exsists
-
+        // console.log(userName)
         if(!user || !isPasswordCorrect){
             res.status(400).json({error:"Invalid Username or password"})
         }
@@ -93,7 +93,6 @@ export const login = async(req,res)=>{
         
     }
 }
-
 export const logout = (req,res)=>{ //here async is not
     try {
         res.cookie("jwt","",{maxAge:0});
